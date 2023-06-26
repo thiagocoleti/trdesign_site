@@ -22,7 +22,7 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/form.css" rel="stylesheet">
 
 </head>
 
@@ -50,9 +50,35 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
-    <h1>Criar aqui um formulário de busca</h1>
-
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title text-center">Formulário de Busca</h1>
+          <form>
+            <div class="form-group">
+              <label for="dadosPessoais">Dados Pessoais</label>
+              <input type="text" class="form-control form-control-lg" id="dadosPessoais" placeholder="">
+            </div><br>
+    
+            <div class="form-group">
+              <label for="compartilhamento">Compartilhamento</label>
+              <input type="text" class="form-control form-control-lg" id="compartilhamento" placeholder="">
+            </div><br>
+    
+            <div class="form-group">
+              <label for="atores">Atores</label>
+              <input type="text" class="form-control form-control-lg" id="atores" placeholder="">
+            </div><br>
+    
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    
     
     </section><!-- End Featured Services Section -->
 
