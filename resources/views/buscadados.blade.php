@@ -29,8 +29,8 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
+  
+    <div class="container d-flex align-items-center justify-content-between" id="header" class="fixed-top">
 
       <h1 class="logo"><a href="{{ route ('route_index')}}">TR DESIGN</a></h1>
       <!-- logo -->
@@ -46,7 +46,7 @@
       </nav><!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->
+  
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -54,31 +54,111 @@
       <div class="card">
         <div class="card-body">
           <h1 class="card-title text-center">Formulário de Busca</h1>
-          <form>
-            <div class="form-group">
-              <label for="dadosPessoais">Dados Pessoais</label>
-              <input type="text" class="form-control form-control-lg" id="dadosPessoais" placeholder="">
-            </div><br>
-    
-            <div class="form-group">
-              <label for="compartilhamento">Compartilhamento</label>
-              <input type="text" class="form-control form-control-lg" id="compartilhamento" placeholder="">
-            </div><br>
-    
-            <div class="form-group">
-              <label for="atores">Atores</label>
-              <input type="text" class="form-control form-control-lg" id="atores" placeholder="">
-            </div><br>
-    
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Buscar</button>
+                  <!-- ... -->
+        <form>
+          <div class="form-group">
+            <div class="col-md-10">
+            <label for="dadosPessoais">Dados Pessoais</label>
+            <input type="text" class="form-control form-control-lg" id="dadosPessoais" placeholder="">
+          </div>
+        </div>
+
+
+        <div class="col-md-1">
+          <div class="form-floating mb-3">
+            <select class="form-select" id="floatingSelect" aria-label="State" placeholder="desktop" name="plataforma">
+              <option value="1" {{ old('plataforma') == '1' ? 'selected' : '' }}>AND</option>
+              <option value="2" {{ old('plataforma') == '2' ? 'selected' : '' }}>OR</option>
+              <option value="3" {{ old('plataforma') == '3' ? 'selected' : '' }}>AND/OR</option>
+            </select>
+            <label for="floatingSelect"></label>
+          </div>
+          @if(old('plataforma'))
+          <p>Opção selecionada: {{ old('plataforma') == '1' ? 'Desktop' : (old('plataforma') == '2' ? 'Web' : (old('plataforma') == '3' ? 'Mobile' : 'IoT')) }}</p>
+          @endif
+        </div>
+
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox1" checked>
+              <label class="form-check-label" for="checkbox1">Descrição</label>
             </div>
-          </form>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox2" checked>
+              <label class="form-check-label" for="checkbox2">Detalhamento</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox3" checked>
+              <label class="form-check-label" for="checkbox3">Recursos</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox4" checked>
+              <label class="form-check-label" for="checkbox4">Ações</label>
+            </div>
+          </div><br>
+
+          
+
+          <div class="form-group">
+            <div class="col-md-10">
+            <label for="compartilhamento">Compartilhamento</label>
+            <input type="text" class="form-control form-control-lg" id="compartilhamento" placeholder="">
+          </div>
+        </div>
+          <div class="form-group">
+           
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox1" checked>
+              <label class="form-check-label" for="checkbox1">Base Legal</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox2" checked>
+              <label class="form-check-label" for="checkbox2">Justificativa</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox3" checked>
+              <label class="form-check-label" for="checkbox3">Ações ou eventos</label>
+            </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <div class="col-md-10">
+            <label for="atores">Atores</label>
+            <input type="text" class="form-control form-control-lg" id="atores" placeholder="">
+          </div>
+          </div>
+            <div class="form-group">
+            
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox1" checked>
+              <label class="form-check-label" for="checkbox1">Nome</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox2" checked>
+              <label class="form-check-label" for="checkbox2">Email</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox3" checked>
+              <label class="form-check-label" for="checkbox3">Tipo</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox4" checked>
+              <label class="form-check-label" for="checkbox4">Estado</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="checkbox5" checked>
+              <label class="form-check-label" for="checkbox5">Cidade</label>
+            </div><br>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </div>
+        </form>
+        <!-- ... -->
+
         </div>
       </div>
     </div>
-    
-    
     
     </section><!-- End Featured Services Section -->
 
